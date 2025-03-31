@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="icon" type="image/x-icon" href="public/profile pic.png">
+</head>
+<body>
+    <style>
+        html{
+            background-color: white;
+        }
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+        nav,
+        .nav-links{
+            display:flex;
+        }
+        nav{
+            justify-content: space-around;
+            align-items:center;
+            height:17vh;
+        }
+        .nav-links{
+            gap :2rem;
+            list-style: none;
+            font-size: 1.5rem;
+        }
+        a{
+            color:black;
+            text-decoration: none;
+            text-decoration-color:white;
+            cursor:pointer;
+        }
+        a:hover{
+            color:grey;
+            text-decoration: underline;
+            text-decoration-color:grey;
+            text-underline-offset:1rem;
+        }
+        .logo{
+            font-size:2rem;
+            cursor:default;
+        }
+        .file-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 11vh;
+        }
+        
+        .file-img img {
+            width: 40%;
+            height: 40%;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        
+        .file-img:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+        <nav>
+            <div class="logo">Projects</div>
+            <div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section id="project">
+            <div class="file-img">
+                <img id="hoverImage" src="public/folder-icon-macos.png"/>
+            </div>
+        </section>
+        <script>
+            const img = document.getElementById("hoverImage");
+            img.addEventListener("click", () => {
+            window.location.href = "prod.html";
+            });
+          </script>
+ </body>
+</html>

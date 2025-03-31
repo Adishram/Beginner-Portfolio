@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="public/profile pic.png">
+<title>Contact Us</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 50%, #f8f0ff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.decorative-orb {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    filter: blur(60px);
+    transition: opacity 3s ease;
+}
+
+.orb-1 {
+    top: 5rem;
+    left: 5rem;
+    width: 18rem;
+    height: 18rem;
+    background: #bfdbfe;
+    animation: float 20s ease-in-out infinite;
+}
+
+.orb-2 {
+    bottom: 5rem;
+    right: 5rem;
+    width: 24rem;
+    height: 24rem;
+    background: #e9d5ff;
+    animation: float 20s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0); opacity: 0.15; }
+    25% { transform: translate(-20px, 20px); opacity: 0.2; }
+    50% { transform: translate(0, 40px); opacity: 0.15; }
+    75% { transform: translate(20px, 20px); opacity: 0.2; }
+}
+
+.container {
+    width: 100%;
+    max-width: 36rem;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #111827;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.header p {
+    color: #4B5563;
+    font-size: 1rem;
+}
+
+.form-container {
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.3);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.form-container:hover {
+    transform: translateY(-2px);
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+.input-group:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.input-group:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid black;
+    outline: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+    border-color: #93C5FD;
+    box-shadow: 0 0 0 4px rgba(147, 197, 253, 0.1);
+    transform: scale(1.01);
+}
+
+textarea {
+    resize: none;
+    height: 8rem;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    background: #000000;
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: slideUp 0.5s ease-out 0.3s forwards;
+}
+
+button:hover {
+    background: #1a1a1a;
+    transform: translateY(-1px);
+}
+
+.send-icon {
+    transition: transform 0.3s ease;
+}
+
+button:hover .send-icon {
+    transform: translateX(2px);
+}
+
+.glass-button {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.glass-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+    .form-container {
+        padding: 1.5rem;
+    }
+    .orb-1, .orb-2 {
+        display: none;
+    }
+}
+</style>
+</head>
+<body>
+<div class="decorative-orb orb-1"></div>
+<div class="decorative-orb orb-2"></div>
+
+<div class="container">
+    <div class="header">
+        <h1>Get in Touch</h1>
+        <p>I'd love to reach out to you</p>
+    </div>
+
+    <form action="https://formspree.io/f/xyzednep" method="POST">
+        <div class="form-container">
+            <div class="input-group"><input type="text" name="name" placeholder="Name" required></div>
+            <div class="input-group"><input type="email" name="email" placeholder="Email" required></div>
+            <div class="input-group"><textarea name="message" placeholder="Message" required></textarea></div>
+            <button type="submit"><span>Send Message</span></button>
+        </div>
+    </form>
+
+    <button onclick="window.location.href='index.html'" class="glass-button">
+        <span>← Back to Home</span>
+    </button>
+</div>
+
+</body>
+</html>
