@@ -9,4 +9,4 @@ The rest of the page i made in React and then used bolt Ai and v0(Vercel) to con
 I wanted to make it a single scroll website but iam too lazy :P.
 This is a really cohesive and Premium and i encourage to take inspiration from my website.
 I'll hosting this and i'll update my link here.
-https://adishram.github.io/Beginner-Portfolio/
+https://adishram.github.io/Portfolio/
